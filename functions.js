@@ -26,9 +26,26 @@ const each = function (collection, iterator) {
   }
 };
 
-const filter = function (collection, test) {};
+const filter = function (collection, test) {
+let result = []
+  each(collection, (element) => {
+    if(test(element)){
+      result.push(element);
+    } 
+  })
+  return result;
+};
+
+const reject = function (collection, test) {
+  let result = [];
+  filter(collection, (element) => {
+    if(test(element) !== true){
+      result.push(element)
+    }
+  })
+  return result;
+};
 const map = function (collection, iterator) {};
-const reject = function (collection, test) {};
 const uniq = function (array) {};
 const reduce = function (collection, iterator, accumulator) {};
 
