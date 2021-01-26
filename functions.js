@@ -45,9 +45,15 @@ const reject = function (collection, test) {
   })
   return result;
 };
-const map = function (collection, iterator) {};
-const uniq = function (array) {};
+const uniq = function (array) {
+  let arr = array.sort();
+  console.log(identity(arr))
+  console.log(array)
+  let result = [];
+
+};
 const reduce = function (collection, iterator, accumulator) {};
+const map = function (collection, iterator) {};
 
 module.exports = {
   filter,
