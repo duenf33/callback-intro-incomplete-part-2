@@ -39,7 +39,7 @@ let result = []
 const reject = function (collection, test) {
   let result = [];
   filter(collection, (element) => {
-    if(test(element) !== true){
+    if(!test(element)){
       result.push(element)
     }
   })
