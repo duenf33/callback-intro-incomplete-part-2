@@ -37,23 +37,44 @@ let result = []
 };
 
 const reject = function (collection, test) {
-  let result = [];
-  filter(collection, (element) => {
-    if(!test(element)){
-      result.push(element)
-    }
-  })
-  return result;
+  return filter(collection, function(value){
+    return !test(value);
+  });
+  // let result = [];
+  // filter(collection, (element) => {
+  //   if(!test(element)){
+  //     result.push(element)
+  //   }
+  // })
+  // return result;
 };
 const uniq = function (array) {
-  let arr = array.sort();
-  console.log(identity(arr))
-  console.log(array)
+
   let result = [];
 
+  each(array, function(element){
+    if(indexOf(result, element) === -1) {
+      result.push(element);
+    }
+  });
+  return result;
 };
+    // var a = [];
+    // for (var i=0, l=arr.length; i<l; i++)
+    //     if (a.indexOf(arr[i]) === -1 && arr[i] !== '')
+    //         a.push(arr[i]);
+    // return a;
+
+// };
+const map = function (collection, iterator) {
+  let result = [];
+  each(collection,(element) => {
+    result.push(iterator(element))
+  });
+  return result;
+};
+
 const reduce = function (collection, iterator, accumulator) {};
-const map = function (collection, iterator) {};
 
 module.exports = {
   filter,
