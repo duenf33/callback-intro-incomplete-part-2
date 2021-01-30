@@ -74,7 +74,9 @@ const map = function (collection, iterator) {
   return result;
 };
 
-const reduce = function (collection, iterator, accumulator) {};
+const reduce = function (collection, iterator, accumulator) {
+  
+};
 
 module.exports = {
   filter,
